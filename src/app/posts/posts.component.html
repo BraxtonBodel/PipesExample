@@ -1,7 +1,10 @@
 <h1>Posts</h1>
-
+<form id="filter">
+  <label>Filter posts by title</label>
+  <input type="text" [(ngModel)]="criteria" name="posts" #criteriaFilter = "ngModel">
+</form>
 <ul>
-  <li *ngFor="let post of posts$">
+  <li *ngFor="let post of posts$ | postFilters:criteria">
     <a href="" routerlink="posts">{{post.title}}</a>
     <p>{{post.body}}</p>
   </li>

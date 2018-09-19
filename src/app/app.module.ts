@@ -8,6 +8,9 @@ import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from "@angular/common/http";
+import { FilterDataPipe } from './pipes/filter-data.pipe';
+import { FormsModule } from '@angular/forms';
+import { PostFiltersPipe } from './pipes/post-filters.pipe';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,16 @@ import { HttpClientModule } from "@angular/common/http";
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    FilterDataPipe,
+    PostFiltersPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

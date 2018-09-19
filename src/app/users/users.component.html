@@ -1,7 +1,10 @@
 <h1>Usuarios</h1>
-
+<form  id="filter">
+  <label for="">Filter users by name</label>
+  <input type="text" [(ngModel)]="criteria" name="search" #criteriaFilter="ngModel" class="form-control">
+</form>
 <ul [@listStagger] = "users$">
-  <li *ngFor="let user of users$">
+  <li *ngFor="let user of users$ | filterData:criteria">
     <a routerLink="/details/{{user.id}}" href="">{{user.name}}</a>
     <ul>
       <li>{{user.email}}</li>

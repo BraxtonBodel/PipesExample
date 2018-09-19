@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from "../data.service";
 import { Observable } from "rxjs";
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { FilterDataPipe } from "../pipes/filter-data.pipe";
 
 
 @Component({
@@ -35,7 +36,6 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class UsersComponent implements OnInit {
 
   users$: Object;
-
   constructor(private data:    DataService) { }
 
   ngOnInit() {
